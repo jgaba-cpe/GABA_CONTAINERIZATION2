@@ -1,0 +1,13 @@
+---
+
+  - name: Install LAMP Stack
+    hosts: clients
+
+    tasks:
+    - name: Include variables from config.yaml
+      include_vars:
+        file: config.yml
+    
+    - name: Install and Run LAMP Stack
+      include_role:
+        name: lamp_stack
